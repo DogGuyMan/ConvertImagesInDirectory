@@ -11,7 +11,7 @@ from PIL import Image
 
 directoryPath:str               = input("경로를 String으로 입력해주세요 : \n")
 recursiveType:str               = input("현재 폴더에서만 실행(N), 내부 폴더까지 순회해서 실행(Y) : \n")
-targetExtentionType:str         = input("변환할 이미지 형식을 입력해주세요 : \n")
+targetExtentionType:str         = input("삭제할 이미지 형식을 입력해주세요 : \n")
 
 def getTargetFiles():
     if recursiveType == "Y":
