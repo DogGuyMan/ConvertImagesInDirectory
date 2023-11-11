@@ -12,7 +12,6 @@ from PIL import Image
 directoryPath:str               = input("경로를 String으로 입력해주세요 : \n")
 recursiveType:str               = input("현재 폴더에서만 실행(N), 내부 폴더까지 순회해서 실행(Y) : \n")
 targetExtentionType:str         = input("변환할 이미지 형식을 입력해주세요 : \n")
-resultExtentionType:str         = input("변환될 결과 이미지 형식을 입력해주세요 : \n")
 
 def getTargetFiles():
     if recursiveType == "Y":
@@ -34,11 +33,6 @@ list_filepath = getTargetFiles()
 print("작업파일 개수 : {0}".format(list_filepath.count))
 
 for imgItem in tqdm(list_filepath):
-    try :
-        im = Image.open(imgItem)
-        im.save(os.path.splitext(imgItem)[0] + ".%s" % resultExtentionType)
-    except Image.UnidentifiedImageError as error:
-        print(error)
-        raise
-
+    os.remove(imgItem)
+    
 exit()
